@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ShanghaiGuide</string>
+    <!-- Category name for places to eat [CHAR LIMIT=20] -->
+    <string name="category_eat">Eat</string>
+    <!-- Category name for places to eat [CHAR LIMIT=20] -->
+    <string name="category_see">See</string>
 </resources>

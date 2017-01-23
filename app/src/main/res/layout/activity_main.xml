@@ -11,24 +11,24 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_purple">
-
-        <TextView
-            android:id="@+id/places_to_eat"
-            style="@style/CategoryStyle"
-            android:text="Places to Eat" />
-    </FrameLayout>
-
-    <!-- Places to Eat -->
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:background="@android:color/holo_green_light">
 
         <TextView
             android:id="@+id/places_to_see"
             style="@style/CategoryStyle"
             android:text="Places to See" />
+    </FrameLayout>
+
+    <!-- Places to Eat -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_purple">
+
+        <TextView
+            android:id="@+id/places_to_eat"
+            style="@style/CategoryStyle"
+            android:text="Places to Eat" />
     </FrameLayout>
 
 </LinearLayout>
