@@ -25,9 +25,9 @@ public class EatActivity extends AppCompatActivity {
 
 
         //Add place object to places arrayList
-        places.add(new Place("Description1", R.drawable.ic_ac_unit_black_24dp, 1, -1));
-        places.add(new Place("Description2", R.drawable.ic_ac_unit_black_24dp, 2, -1));
-        places.add(new Place("Description3", R.drawable.ic_ac_unit_black_24dp, 3, -1));
+        places.add(new Place("Description to eat 1", R.drawable.ic_ac_unit_black_24dp, 1, -1));
+        places.add(new Place("Description to eat 2", R.drawable.ic_ac_unit_black_24dp, 2, -1));
+        places.add(new Place("Description to eat 3", R.drawable.ic_ac_unit_black_24dp, 3, -1));
 
         // Create an {@link PlaceAdapter}, whose data source is a list of place objects. The
         // adapter knows how to create layouts for each item in the list, using the
