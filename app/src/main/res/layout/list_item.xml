@@ -5,31 +5,31 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/word_image"
+        android:id="@+id/place_thumb_image"
         android:layout_width="@dimen/list_item_height"
         android:layout_height="@dimen/list_item_height"
         android:background="@color/tan_background"
         tools:src="@mipmap/ic_launcher" />
 
     <LinearLayout
-        android:layout_toRightOf="@+id/word_image"
+        android:layout_toRightOf="@+id/place_thumb_image"
         android:layout_width="match_parent"
         android:layout_height="@dimen/list_item_height"
         android:orientation="vertical"
         android:id="@+id/text_container">
 
         <TextView
-            android:id="@+id/miwok_word"
+            android:id="@+id/description_brief_text"
             style="@style/PlacesStyle"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="top"
             android:textStyle="bold"
             tools:background="@color/primary_dark_color"
-            tools:text="DescriptionBrief" />
+            tools:text="Description-Brief" />
 
         <TextView
-            android:id="@+id/default_word"
+            android:id="@+id/rating_text"
             style="@style/PlacesStyle"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -37,7 +37,7 @@
             tools:background="@color/primary_dark_color"
             tools:text="Rating" />
         <TextView
-            android:id="@+id/default_word"
+            android:id="@+id/location_text"
             style="@style/PlacesStyle"
             android:layout_height="0dp"
             android:layout_weight="1"

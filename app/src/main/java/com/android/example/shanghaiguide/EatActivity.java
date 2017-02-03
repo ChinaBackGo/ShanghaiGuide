@@ -1,6 +1,5 @@
 package com.android.example.shanghaiguide;
 
-import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,15 +18,16 @@ public class EatActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.place_list);
+        Log.v(TAG, "onCreate:");
 
-        //String[] words = new String[11];
-        //TODO: Refactor
-        //ArrayList<Place> Places = new ArrayList<>();
+        //Array list of places
+        ArrayList<Place> places = new ArrayList<>();
 
 
-        //Add word object to words arrayList
-        //TODO: Refactor for places
-        //words.add(new Word("red", "weṭeṭṭi", R.drawable.color_red, R.raw.color_red));
+        //Add place object to places arrayList
+        places.add(new Place("Description1", R.drawable.ic_ac_unit_black_24dp, 1, -1));
+        places.add(new Place("Description2", R.drawable.ic_ac_unit_black_24dp, 2, -1));
+        places.add(new Place("Description3", R.drawable.ic_ac_unit_black_24dp, 3, -1));
 
         // Create an {@link WordAdapter}, whose data source is a list of Word objects. The
         // adapter knows how to create layouts for each item in the list, using the
