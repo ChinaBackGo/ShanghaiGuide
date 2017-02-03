@@ -11,7 +11,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_green_light">
+        android:background="@color/category_see">
 
         <TextView
             android:id="@+id/places_to_see"
@@ -23,7 +23,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_purple">
+        android:background="@color/category_eat">
 
         <TextView
             android:id="@+id/places_to_eat"

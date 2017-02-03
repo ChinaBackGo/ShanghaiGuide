@@ -29,28 +29,27 @@ public class EatActivity extends AppCompatActivity {
         places.add(new Place("Description2", R.drawable.ic_ac_unit_black_24dp, 2, -1));
         places.add(new Place("Description3", R.drawable.ic_ac_unit_black_24dp, 3, -1));
 
-        // Create an {@link WordAdapter}, whose data source is a list of Word objects. The
+        // Create an {@link PlaceAdapter}, whose data source is a list of place objects. The
         // adapter knows how to create layouts for each item in the list, using the
-        // getView overrided method.
-        // This list item layout two text views and an image resource
-        //TODO: Refactor
-        //PlacesAdapter adapter =
-        //        new PlacesAdapter(this, words);
+        // getView override method.
+        // This list item layout from list_item layout
+        PlaceAdapter adapter =
+                new PlaceAdapter(this, places, R.color.category_eat);
 
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
         // There should be a {@link ListView} with the view ID called list, which is declared in the
-        // word_list.xml file.
+        // place_list.xml file.
         ListView listView = (ListView) findViewById(R.id.list);
 
-        // Make the {@link ListView} use the {@link ArrayAdapter} we created above, so that the
-        // {@link ListView} will display list items for each word in the list of words.
+        // Make the {@link ListView} use the {@link ArrayAdapter} overidded by PlaceAdapter we
+        // created above, so that the {@link ListView} will display list items for each word in the
+        // list of words.
         // Do this by calling the setAdapter method on the {@link ListView} object and pass in
-        // 1 argument, which is the {@link ArrayAdapter} with the variable name itemsAdapter.
-        //TODO Refactor
-        //listView.setAdapter(adapter);
+        // 1 argument, which is the {@link ArrayAdapter} with the variable name adapter.
+        listView.setAdapter(adapter);
 
 
-        //Register onClick listerner to start audio playback of word
+        // TODO: Register onClick listener to show detailed view
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
