@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.util.List;
@@ -67,12 +68,12 @@ public class PlaceAdapter extends ArrayAdapter<Place> {
         placeDescriptionBriefTextView.setText(currentPlace.getPlaceDescriptionBrief());
 
         // Find the view in the list_item.xml layout with the Id
-        TextView placeRating = (TextView) listItemView.findViewById(R.id.rating_text);
+        RatingBar placeRating = (RatingBar) listItemView.findViewById(R.id.rating_bar);
 
         // Get the resource from current object
         // set this resource on the listItemView
-        // TODO: Convert rating to star image rating
-        placeRating.setText("Rating: " + currentPlace.getRating());
+        // TODO: Fix rating bar clipping
+        placeRating.setRating(currentPlace.getRating());
 
         // Find the view in the list_item.xml layout with the Id
         TextView placeLocation = (TextView) listItemView.findViewById(R.id.location_text);

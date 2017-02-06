@@ -28,14 +28,14 @@
             tools:background="@color/primary_dark_color"
             tools:text="Description-Brief" />
 
-        <TextView
-            android:id="@+id/rating_text"
+        <RatingBar
+            android:id="@+id/rating_bar"
             style="@style/PlacesStyle"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="top"
-            tools:background="@color/primary_dark_color"
-            tools:text="Rating" />
+            android:layout_weight="2"
+            android:layout_width="wrap_content"
+            android:numStars="5"/>
+
         <TextView
             android:id="@+id/location_text"
             style="@style/PlacesStyle"
