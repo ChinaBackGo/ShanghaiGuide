@@ -25,9 +25,9 @@ public class SeeActivity extends AppCompatActivity {
 
 
         //Add place object to places arrayList
-        places.add(new Place("Description to see 1", R.drawable.ic_ac_unit_black_24dp, 1, -1));
-        places.add(new Place("Description to see 2", R.drawable.ic_ac_unit_black_24dp, 2, -1));
-        places.add(new Place("Description to see 3", R.drawable.ic_ac_unit_black_24dp, 3, -1));
+        places.add(new Place("Moca Shanghai", R.drawable.moca_shanghai_thumb, 1, -1));
+        places.add(new Place("Shanghai Museum", R.drawable.shanghai_museum_thumb, 2, -1));
+        places.add(new Place("Urban Planning Museum", R.drawable.urban_planning_thumb, 3, -1));
 
         // Create an {@link PlaceAdapter}, whose data source is a list of place objects. The
         // adapter knows how to create layouts for each item in the list, using the
