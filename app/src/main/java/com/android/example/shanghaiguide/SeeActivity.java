@@ -25,9 +25,12 @@ public class SeeActivity extends AppCompatActivity {
 
 
         //Add place object to places arrayList
-        places.add(new Place("Moca Shanghai", R.drawable.moca_shanghai_thumb, 1, -1));
-        places.add(new Place("Shanghai Museum", R.drawable.shanghai_museum_thumb, 2, -1));
-        places.add(new Place("Urban Planning Museum", R.drawable.urban_planning_thumb, 3, -1));
+        places.add(new Place("MOCA Shanghai", R.drawable.moca_shanghai_thumb, 1,
+                "人民公园, 南京西路231号, 近黄陂北路", 31.2316009,121.468881));
+        places.add(new Place("Shanghai Museum", R.drawable.shanghai_museum_thumb, 2,
+                "上海博物馆, 人民大道201号, 近黄陂北路", 31.2283353,121.4733391));
+        places.add(new Place("Urban Planning Exhibition Hall", R.drawable.urban_planning_thumb, 3,
+                "上海城市规划展示馆, 人民大道100号, 近西藏路", 31.2314196,121.4732123));
 
         // Create an {@link PlaceAdapter}, whose data source is a list of place objects. The
         // adapter knows how to create layouts for each item in the list, using the

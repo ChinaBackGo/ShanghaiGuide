@@ -81,7 +81,7 @@ public class PlaceAdapter extends ArrayAdapter<Place> {
         // Get the resource from current object
         // set this resource on the listItemView
         // TODO: Convert location data to Location view or distance from current location
-        placeLocation.setText("Location: " + currentPlace.getLocationResourceId());
+        placeLocation.setText("Location: " + currentPlace.getAddress());
 
         // Find the view in the list_item.xml layout with the Id
         ImageView placeThumb = (ImageView) listItemView.findViewById(R.id.place_thumb_image);

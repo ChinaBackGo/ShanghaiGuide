@@ -25,9 +25,12 @@ public class EatActivity extends AppCompatActivity {
 
 
         //Add place object to places arrayList
-        places.add(new Place("Boxing Cat Brewery (Yongfu Lu)", R.drawable.boxing_cat_yongfu_thumb, 1, -1));
-        places.add(new Place("Drink up!", R.drawable.drink_up_thumb, 2, -1));
-        places.add(new Place("Up Town Beer", R.drawable.up_town_beer_thumb, 3, -1));
+        places.add(new Place("Boxing Cat Brewery (Yongfu Lu)", R.drawable.boxing_cat_yongfu_thumb, 1,
+                "复兴路82号, 近永福路", 31.2108309, 121.4408615));
+        places.add(new Place("Drink UP Beer Convenience Store", R.drawable.drink_up_thumb, 2,
+                "建国中路169号, 近瑞金二路", 31.2089731,121.4658453));
+        places.add(new Place("Uptown Records n' Beer", R.drawable.up_town_beer_thumb, 3,
+                "永福路131号, 近复兴路", 31.2099268,121.442875));
 
         // Create an {@link PlaceAdapter}, whose data source is a list of place objects. The
         // adapter knows how to create layouts for each item in the list, using the

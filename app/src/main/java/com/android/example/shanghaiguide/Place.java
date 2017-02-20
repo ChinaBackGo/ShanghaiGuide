@@ -1,5 +1,6 @@
 package com.android.example.shanghaiguide;
 
+
 /**
  * Place
  * This object contains data associated with a place
@@ -16,24 +17,32 @@ public class Place {
     private int mImageDetailedResourceId = NO_RESOURCE_PROVIDED;;
     //Private int place rating
     private int mRating = NO_RESOURCE_PROVIDED;;
-    //Private int location resource id
-    private int mLocationResourceId = NO_RESOURCE_PROVIDED;;
+    //TODO: refactor location data into something safer/more convenient
+    //Private String address
+    private String mAddress = null;
     //Private static int final no resource state
     private static final int NO_RESOURCE_PROVIDED = -1;
+    //Private double latitude
+    private double mLatitude;
+    //Private double longitude
+    private double mLongitude;
 
     /**
      * Public Constructor
      * @param place_description_brief a brief description of the place
      * @param image_thumb_resource_id a thumbnail resource id
      * @param rating a rating of the place out of 10
-     * @param location a location uri
+     * @param latitude a double value of latitude
+     * @param longitude a double value of longitude
      */
     public Place(String place_description_brief, int image_thumb_resource_id, int rating,
-                int location) {
+                 String address, double latitude, double longitude) {
         mPlaceDescriptionBrief = place_description_brief;
         mImageThumbResourceId = image_thumb_resource_id;
         mRating = rating;
-        mLocationResourceId = location;
+        mAddress = address;
+        mLatitude = latitude;
+        mLongitude = longitude;
     }
 
     /**
@@ -80,8 +89,24 @@ public class Place {
      * Get Method - Location resource id
      * @return int location resource id
      */
-    public int getLocationResourceId() {
-        return mLocationResourceId;
+    public String getAddress() {
+        return mAddress;
+    }
+
+    /**
+     * Get Method - Latitude double
+     * @return double latitude
+     */
+    public double getLatitude() {
+        return mLatitude;
+    }
+
+    /**
+     * Get Method - Longitude double
+     * @return double longitude
+     */
+    public double getLongitude() {
+        return mLongitude;
     }
 
     /**
@@ -100,7 +125,9 @@ public class Place {
                 ", mImageThumbResourceId=" + mImageThumbResourceId +
                 ", mImageDetailedResourceId=" + mImageDetailedResourceId +
                 ", mRating=" + mRating +
-                ", mLocationResourceId=" + mLocationResourceId +
+                ", mAddress='" + mAddress + '\'' +
+                ", mLatitude=" + mLatitude +
+                ", mLongitude=" + mLongitude +
                 '}';
     }
 }
