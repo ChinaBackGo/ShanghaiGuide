@@ -53,12 +53,17 @@ public class SeeActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
 
-        // TODO: Register onClick listener to show detailed view
+        // Register onClick listener to show detailed view
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Place currentPlace = (Place) parent.getItemAtPosition(position);
                 Log.v(TAG, "onItemClick: " + currentPlace.toString());
+                String address = currentPlace.getAddress(); 
+                Intent intent = new Intent(view.getContext(), DetailedActivity.class); 
+                startActivity(intent);
+                //TODO: fix up this log message - shouldn't send address
+                 Log.v(TAG, "OpeningActivity: DetailedActivity " + address);
             }
         });
     }
