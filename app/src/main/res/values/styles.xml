@@ -28,4 +28,10 @@
         <item name="android:textAppearance">?android:textAppearanceMedium</item>
     </style>
 
+    <!-- Style for a Rating bar -->
+    <style name="RatingStyle">
+        <item name="android:ratingBarStyle">?android:attr/ratingBarStyleSmall</item>
+    </style>
+
+
 </resources>

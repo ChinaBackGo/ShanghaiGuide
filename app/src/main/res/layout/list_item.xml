@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/list_item_view"
     android:layout_width="match_parent"
-    android:minHeight="@dimen/list_item_height"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:minHeight="@dimen/list_item_height">
 
     <ImageView
         android:id="@+id/place_thumb_image"
@@ -32,11 +32,13 @@
 
         <RatingBar
             android:id="@+id/rating_bar"
-            style="@style/PlacesStyle"
+            style="@style/RatingStyle"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="2"
-            android:numStars="5" />
+            android:isIndicator="true"
+            android:numStars="5"
+            android:stepSize="1" />
 
         <TextView
             android:id="@+id/location_text"

@@ -56,7 +56,8 @@ public class EatActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-               Log.v(TAG, "onItemClick: ");
+                Place currentPlace = (Place) parent.getItemAtPosition(position);
+                Log.v(TAG, "onItemClick: " + currentPlace.toString());
             }
         });
     }

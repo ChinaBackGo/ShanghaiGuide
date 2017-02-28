@@ -59,10 +59,6 @@ public class SeeActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Place currentPlace = (Place) parent.getItemAtPosition(position);
                 Log.v(TAG, "onItemClick: " + currentPlace.toString());
-                //String address = currentPlace.getAddress();
-                //Intent intent = new Intent(view.getContext(), DetailedActivity.class);
-                //startActivity(intent);
-                //Log.v(TAG, "OpeningActivity: DetailedActivity");
             }
         });
     }
