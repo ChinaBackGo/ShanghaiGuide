@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_item_view"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:minHeight="@dimen/list_item_height"
+    android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/place_thumb_image"
@@ -12,11 +14,11 @@
         tools:src="@mipmap/ic_launcher" />
 
     <LinearLayout
-        android:layout_toRightOf="@+id/place_thumb_image"
+        android:id="@+id/list_item_container"
         android:layout_width="match_parent"
         android:layout_height="@dimen/list_item_height"
-        android:orientation="vertical"
-        android:id="@+id/list_item_container">
+        android:layout_toRightOf="@+id/place_thumb_image"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/description_brief_text"
@@ -31,10 +33,10 @@
         <RatingBar
             android:id="@+id/rating_bar"
             style="@style/PlacesStyle"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="2"
-            android:layout_width="wrap_content"
-            android:numStars="5"/>
+            android:numStars="5" />
 
         <TextView
             android:id="@+id/location_text"

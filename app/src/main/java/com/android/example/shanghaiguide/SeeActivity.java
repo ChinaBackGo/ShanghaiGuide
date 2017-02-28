@@ -1,5 +1,6 @@
 package com.android.example.shanghaiguide;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -56,7 +57,12 @@ public class SeeActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // Log.v(TAG, "onItemClick: " + currentWord.toString());
+                Place currentPlace = (Place) parent.getItemAtPosition(position);
+                Log.v(TAG, "onItemClick: " + currentPlace.toString());
+                //String address = currentPlace.getAddress();
+                //Intent intent = new Intent(view.getContext(), DetailedActivity.class);
+                //startActivity(intent);
+                //Log.v(TAG, "OpeningActivity: DetailedActivity");
             }
         });
     }
