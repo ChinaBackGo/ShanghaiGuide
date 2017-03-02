@@ -57,9 +57,24 @@ public class EatActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                // parent here is the view that was clicked on in the listView
+                // getItemAtPosition returns the Place object associated with that view
                 Place currentPlace = (Place) parent.getItemAtPosition(position);
                 Log.v(TAG, "onItemClick: " + currentPlace.toString());
+
+                // Get the Place data and create a bundle
+                double latitude = currentPlace.getLatitude();
+                double longitude = currentPlace.getLongitude();
+                Bundle locationBundle = new Bundle();
+                locationBundle.putDouble("latitude", latitude);
+                locationBundle.putDouble("longitude", longitude);
+
+                Log.v(TAG, "onItemClick: locationBundle " + locationBundle.toString());
+
+                // Put the bundle in the intent
                 Intent intent = new Intent(view.getContext(), DetailedActivity.class);
+                intent.putExtra("location", locationBundle);
                 startActivity(intent);
             }
         });
