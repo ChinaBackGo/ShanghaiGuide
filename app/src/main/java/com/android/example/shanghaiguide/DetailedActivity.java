@@ -1,6 +1,10 @@
 package com.android.example.shanghaiguide;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.LocationManager;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +24,8 @@ public class DetailedActivity extends AppCompatActivity {
         Bundle intentBundle = new Bundle(getIntent().getBundleExtra("location"));
         Log.v(TAG, "onCreate: Bundle: " + intentBundle.getDouble("latitude") + "/" +
                 intentBundle.getDouble("longitude"));
+
+        Log.i(TAG, "Location: " + MainActivity.mlocationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER).toString());
 
     }
 
