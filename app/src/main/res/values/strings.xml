@@ -4,4 +4,15 @@
     <string name="category_eat">Eat</string>
     <!-- Category name for places to eat [CHAR LIMIT=20] -->
     <string name="category_see">See</string>
+    <!-- Category name for places to eat [CHAR LIMIT=20] -->
+    <string name="category_detailed">Info</string>
+    <!-- Bundle Keys -->
+    <string name="key_latitude">latitude</string>
+    <string name="key_longitude">longitude</string>
+    <string name="key_title">title</string>
+    <string name="key_full_description">full_description</string>
+    <string name="key_address">address</string>
+    <string name="key_color">color</string>
+    <string name="key_location">location</string>
+    <string name="key_parent">parent</string>
 </resources>

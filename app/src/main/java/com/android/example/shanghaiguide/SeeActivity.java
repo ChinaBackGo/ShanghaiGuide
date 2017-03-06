@@ -1,7 +1,6 @@
 package com.android.example.shanghaiguide;
 
 import android.content.Intent;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +14,10 @@ public class SeeActivity extends AppCompatActivity {
 
     //Logging TAG
     private static final String TAG = "SeeActivity";
+    private static final String ACTIVITY_NAME = "SeeActivity";
+
+    //Activity Color
+    private final int mActivityColor = R.color.category_see;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +42,7 @@ public class SeeActivity extends AppCompatActivity {
         // getView override method.
         // This list item layout from list_item layout
         PlaceAdapter adapter =
-                new PlaceAdapter(this, places, R.color.category_see);
+                new PlaceAdapter(this, places, mActivityColor);
 
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
         // There should be a {@link ListView} with the view ID called list, which is declared in the
@@ -63,22 +66,22 @@ public class SeeActivity extends AppCompatActivity {
                 Place currentPlace = (Place) parent.getItemAtPosition(position);
                 Log.v(TAG, "onItemClick: " + currentPlace.toString());
 
-                // Get the Place data and create a bundle
+                // Get the Place data (and category color) and create a bundle
                 Bundle localBundle = new Bundle();
-                localBundle.putDouble("latitude", currentPlace.getLatitude());
-                localBundle.putDouble("longitude", currentPlace.getLongitude());
-                localBundle.putInt("color", R.color.category_see);
-                localBundle.putString("title", currentPlace.getPlaceDescriptionBrief());
-                localBundle.putString("address", currentPlace.getAddress());
-                localBundle.putString("full_text", currentPlace.getPlaceDescriptionDetailed());
+                localBundle.putDouble(getString(R.string.key_latitude), currentPlace.getLatitude());
+                localBundle.putDouble(getString(R.string.key_longitude), currentPlace.getLongitude());
+                localBundle.putInt(getString(R.string.key_color), mActivityColor);
+                localBundle.putString(getString(R.string.key_title), currentPlace.getPlaceDescriptionBrief());
+                localBundle.putString(getString(R.string.key_address), currentPlace.getAddress());
+                localBundle.putString(getString(R.string.key_full_description), currentPlace.getPlaceDescriptionDetailed());
 
                 Log.v(TAG, "onItemClick: locationBundle " + localBundle.toString());
 
                 // Put the bundle in the intent
                 Intent intent = new Intent(view.getContext(), DetailedActivity.class);
-                intent.putExtra("location", localBundle);
+                intent.putExtra(getString(R.string.key_location), localBundle);
                 // Add calling intent class
-                intent.putExtra("parent", "SeeActivity");
+                intent.putExtra(getString(R.string.key_parent), ACTIVITY_NAME);
                 startActivity(intent);
             }
         });

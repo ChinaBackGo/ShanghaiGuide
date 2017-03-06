@@ -16,6 +16,7 @@
         android:textStyle="bold"
         tools:background="@color/primary_dark_color"
         tools:text="Title" />
+
     <TextView
         android:id="@+id/description_full_text"
         style="@style/PlacesStyle"
@@ -24,6 +25,7 @@
         android:gravity="top"
         tools:background="@color/primary_dark_color"
         tools:text="Description-Full" />
+
     <TextView
         android:id="@+id/address_text"
         style="@style/PlacesStyle"
@@ -32,13 +34,14 @@
         android:gravity="top"
         tools:background="@color/primary_dark_color"
         tools:text="Address" />
+
     <ImageView
         android:id="@+id/map_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="6"
-        tools:src="@drawable/drink_up_thumb">
-    </ImageView>
+        android:contentDescription="Null"
+        tools:src="@drawable/drink_up_thumb"/>
 
 
 </LinearLayout>
