@@ -1,6 +1,7 @@
 package com.android.example.shanghaiguide;
 
 import android.content.Intent;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -62,12 +63,14 @@ public class EatActivity extends AppCompatActivity {
                 Place currentPlace = (Place) parent.getItemAtPosition(position);
                 Log.v(TAG, "onItemClick: " + currentPlace.toString());
 
-                // Get the Place data and create a bundle
-                double latitude = currentPlace.getLatitude();
-                double longitude = currentPlace.getLongitude();
+                // Get the Place data (and category color) and create a bundle
                 Bundle localBundle = new Bundle();
-                localBundle.putDouble("latitude", latitude);
-                localBundle.putDouble("longitude", longitude);
+                localBundle.putDouble("latitude", currentPlace.getLatitude());
+                localBundle.putDouble("longitude", currentPlace.getLongitude());
+                localBundle.putInt("color", R.color.category_eat);
+                localBundle.putString("title", currentPlace.getPlaceDescriptionBrief());
+                localBundle.putString("address", currentPlace.getAddress());
+                localBundle.putString("full_text", currentPlace.getPlaceDescriptionDetailed());
 
                 Log.v(TAG, "onItemClick: locationBundle " + localBundle.toString());
 

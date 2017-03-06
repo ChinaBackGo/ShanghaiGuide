@@ -1,6 +1,7 @@
 package com.android.example.shanghaiguide;
 
 import android.content.Intent;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -63,11 +64,13 @@ public class SeeActivity extends AppCompatActivity {
                 Log.v(TAG, "onItemClick: " + currentPlace.toString());
 
                 // Get the Place data and create a bundle
-                double latitude = currentPlace.getLatitude();
-                double longitude = currentPlace.getLongitude();
                 Bundle localBundle = new Bundle();
-                localBundle.putDouble("latitude", latitude);
-                localBundle.putDouble("longitude", longitude);
+                localBundle.putDouble("latitude", currentPlace.getLatitude());
+                localBundle.putDouble("longitude", currentPlace.getLongitude());
+                localBundle.putInt("color", R.color.category_see);
+                localBundle.putString("title", currentPlace.getPlaceDescriptionBrief());
+                localBundle.putString("address", currentPlace.getAddress());
+                localBundle.putString("full_text", currentPlace.getPlaceDescriptionDetailed());
 
                 Log.v(TAG, "onItemClick: locationBundle " + localBundle.toString());
 
