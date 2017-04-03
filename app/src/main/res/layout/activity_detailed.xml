@@ -10,6 +10,7 @@
     <TextView
         android:id="@+id/description_title_text"
         style="@style/PlacesStyle"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="top"
@@ -20,6 +21,7 @@
     <TextView
         android:id="@+id/description_full_text"
         style="@style/PlacesStyle"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="top"
@@ -29,19 +31,21 @@
     <TextView
         android:id="@+id/address_text"
         style="@style/PlacesStyle"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="top"
         tools:background="@color/primary_dark_color"
         tools:text="Address" />
 
-    <ImageView
-        android:id="@+id/map_view"
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="6"
-        android:contentDescription="Null"
-        tools:src="@drawable/drink_up_thumb"/>
+        android:layout_height="0dp"
+        android:layout_weight="12"
+        tools:context="com.example.mapwithmarker.MapsMarkerActivity" />
 
 
 </LinearLayout>
