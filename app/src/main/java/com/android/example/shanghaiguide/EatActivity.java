@@ -1,6 +1,9 @@
 package com.android.example.shanghaiguide;
 
+import com.android.example.shanghaiguide.PlacePersistenceContract.PlaceEntry;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +27,36 @@ public class EatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.place_list);
         Log.v(TAG, "onCreate:");
+
+        Log.v(TAG, "Database Helper Test");
+
+        PlaceDbHelper mDbHelper = new PlaceDbHelper(this);
+        // Gets the data repository in write mode
+        SQLiteDatabase db = mDbHelper.getWritableDatabase();
+
+        // Create a new map of values, where column names are the keys
+        ContentValues values = new ContentValues();
+        values.put(PlaceEntry.COLUMN_NAME_DESCRIPTION_BRIEF, "Beer Garden");
+        values.put(PlaceEntry.COLUMN_NAME_DESCRIPTION_DETAILED, "A lovely Beer Garden located somewhere nice");
+        values.put(PlaceEntry.COLUMN_NAME_IMAGE_THUMB_ID, 1532);
+        values.put(PlaceEntry.COLUMN_NAME_LATITUDE, 24543.5f);
+        /*
+        public static final String COLUMN_NAME_DESCRIPTION_BRIEF = "description_brief";
+        public static final String COLUMN_NAME_DESCRIPTION_DETAILED = "description_detailed";
+        public static final String COLUMN_NAME_IMAGE_THUMB_ID = "image_thumb_id";
+        public static final String COLUMN_NAME_IMAGE_ID = "image_id";
+        public static final String COLUMN_NAME_RATING = "rating";
+        public static final String COLUMN_NAME_ADDRESS = "address";
+        public static final String COLUMN_NAME_LATITUDE = "latitude";
+        public static final String COLUMN_NAME_LONGITUDE = "longitude";
+        */
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId = db.insert(PlaceEntry.TABLE_NAME, null, values);
+        Log.v(TAG, "New RowId" + newRowId);
+
+
+        mDbHelper.close();
 
         //Array list of places
         ArrayList<Place> places = new ArrayList<>();
