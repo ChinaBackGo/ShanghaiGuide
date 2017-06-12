@@ -10,6 +10,8 @@ import android.database.sqlite.SQLiteOpenHelper;
  * https://developer.android.com/training/basics/data-storage/databases.html#DbHelper
  * https://github.com/googlesamples/android-architecture/tree/todo-mvp/todoapp/app/src/main/java/
  * com/example/android/architecture/blueprints/todoapp/data/source/local
+ *
+ * note: best practice create one helper class per table
  */
 
 public class PlaceDbHelper extends SQLiteOpenHelper {
