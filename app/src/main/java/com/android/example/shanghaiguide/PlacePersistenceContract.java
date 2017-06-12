@@ -14,6 +14,7 @@ public class PlacePersistenceContract {
     /* Inner class that defines the table contents */
     public static abstract class PlaceEntry implements BaseColumns {
         public static final String TABLE_NAME = "places";
+        public static final String COLUMN_NAME_CATEGORY = "category";
         public static final String COLUMN_NAME_DESCRIPTION_BRIEF = "description_brief";
         public static final String COLUMN_NAME_DESCRIPTION_DETAILED = "description_detailed";
         public static final String COLUMN_NAME_IMAGE_THUMB_ID = "image_thumb_id";

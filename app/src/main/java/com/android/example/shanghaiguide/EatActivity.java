@@ -18,6 +18,7 @@ public class EatActivity extends AppCompatActivity {
     //Logging TAG
     private static final String TAG = "EatActivity";
     private static final String ACTIVITY_NAME = "EatActivity";
+    private static final int CATEGORY = 1;
 
     //Activity Color
     private final int mActivityColor = R.color.category_eat;
@@ -36,6 +37,7 @@ public class EatActivity extends AppCompatActivity {
 
         // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
+        values.put(PlaceEntry.COLUMN_NAME_CATEGORY, CATEGORY);
         values.put(PlaceEntry.COLUMN_NAME_DESCRIPTION_BRIEF, "Beer Garden");
         values.put(PlaceEntry.COLUMN_NAME_DESCRIPTION_DETAILED, "A lovely Beer Garden located somewhere nice");
         values.put(PlaceEntry.COLUMN_NAME_IMAGE_THUMB_ID, 1532);
