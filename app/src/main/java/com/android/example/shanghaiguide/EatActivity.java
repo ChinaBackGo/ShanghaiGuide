@@ -28,35 +28,11 @@ public class EatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.place_list);
         Log.v(TAG, "onCreate:");
-
         Log.v(TAG, "Database Helper Test");
 
-        PlaceDbHelper mDbHelper = new PlaceDbHelper(this);
+        PlaceDbAssetHelper mDbHelper = new PlaceDbAssetHelper(this);
         // Gets the data repository in write mode
-        SQLiteDatabase db = mDbHelper.getWritableDatabase();
-
-        // Create a new map of values, where column names are the keys
-        ContentValues values = new ContentValues();
-        values.put(PlaceEntry.COLUMN_NAME_CATEGORY, CATEGORY);
-        values.put(PlaceEntry.COLUMN_NAME_DESCRIPTION_BRIEF, "Beer Garden");
-        values.put(PlaceEntry.COLUMN_NAME_DESCRIPTION_DETAILED, "A lovely Beer Garden located somewhere nice");
-        values.put(PlaceEntry.COLUMN_NAME_IMAGE_THUMB_ID, 1532);
-        values.put(PlaceEntry.COLUMN_NAME_LATITUDE, 24543.5f);
-        /*
-        public static final String COLUMN_NAME_DESCRIPTION_BRIEF = "description_brief";
-        public static final String COLUMN_NAME_DESCRIPTION_DETAILED = "description_detailed";
-        public static final String COLUMN_NAME_IMAGE_THUMB_ID = "image_thumb_id";
-        public static final String COLUMN_NAME_IMAGE_ID = "image_id";
-        public static final String COLUMN_NAME_RATING = "rating";
-        public static final String COLUMN_NAME_ADDRESS = "address";
-        public static final String COLUMN_NAME_LATITUDE = "latitude";
-        public static final String COLUMN_NAME_LONGITUDE = "longitude";
-        */
-
-        // Insert the new row, returning the primary key value of the new row
-        long newRowId = db.insert(PlaceEntry.TABLE_NAME, null, values);
-        Log.v(TAG, "New RowId" + newRowId);
-
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
 
         mDbHelper.close();
 
