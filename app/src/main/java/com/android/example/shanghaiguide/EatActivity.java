@@ -1,12 +1,16 @@
 package com.android.example.shanghaiguide;
 
+import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import com.android.example.shanghaiguide.PlacePersistenceContract.PlaceEntry;
 
 import java.util.ArrayList;
 
@@ -14,10 +18,15 @@ public class EatActivity extends AppCompatActivity {
 
     //Logging TAG
     private static final String TAG = "EatActivity";
+    //Activity name
     private static final String ACTIVITY_NAME = "EatActivity";
+    //Category DB id TODO: bring this in from config?
+    private static final String CATEGORY = "1";
 
     //Activity Color
     private final int mActivityColor = R.color.category_eat;
+    //asset helper object
+    private PlaceDbAssetHelper mDbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,17 +34,13 @@ public class EatActivity extends AppCompatActivity {
         setContentView(R.layout.place_list);
         Log.v(TAG, "onCreate:");
 
-        //Array list of places
-        ArrayList<Place> places = new ArrayList<>();
+        // Get the database
+        mDbHelper = new PlaceDbAssetHelper(this);
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
 
-
-        //Add place object to places arrayList
-        places.add(new Place("Boxing Cat Brewery (Yongfu Lu)", R.drawable.boxing_cat_yongfu_thumb, 1,
-                "复兴路82号, 近永福路", 31.2108309, 121.4408615));
-        places.add(new Place("Drink UP Beer Convenience Store", R.drawable.drink_up_thumb, 2,
-                "建国中路169号, 近瑞金二路", 31.2089731,121.4658453));
-        places.add(new Place("Uptown Records n' Beer", R.drawable.up_town_beer_thumb, 3,
-                "永福路131号, 近复兴路", 31.2099268,121.442875));
+        //Array list of places from db
+        // TODO: remove unchecked assignment (java warning)
+        ArrayList<Place> places = mDbHelper.getArrayOfPlaces(db, this, CATEGORY);
 
         // Create an {@link PlaceAdapter}, whose data source is a list of place objects. The
         // adapter knows how to create layouts for each item in the list, using the
@@ -85,5 +90,11 @@ public class EatActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        mDbHelper.close();
+        super.onDestroy();
     }
 }

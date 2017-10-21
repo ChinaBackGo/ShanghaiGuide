@@ -1,0 +1,7 @@
+_id,category,description_brief,description_detailed,image_thumb_id,image_id,rating,address,latitude,longitude
+1,1,Boxing Cat Brewery (Yongfu Lu),,R.drawable.boxing_cat_yongfu_thumb,,1,复兴路82号 近永福路,31.2108309,121.4408615
+2,1,Drink UP Beer Convenience Store,,R.drawable.drink_up_thumb,,2,建国中路169号 近瑞金二路,31.2089731,121.47
+3,1,Uptown Records n' Beer,,R.drawable.up_town_beer_thumb,,3,永福路131号 近复兴路,31.2099268,121.442875
+4,2,MOCA Shanghai,,R.drawable.moca_shanghai_thumb,,1,人民公园 南京西路231号 近黄陂北路,31.2316009,121.468881
+5,2,Shanghai Museum,,R.drawable.shanghai_museum_thumb,,2,上海博物馆 人民大道201号 近黄陂北路,31.2283353,121.4733391
+6,2,Urban Planning Exhibition Hall,,R.drawable.urban_planning_thumb,,3,上海城市规划展示馆 人民大道100号 近西藏路,31.2314196,121.4732123

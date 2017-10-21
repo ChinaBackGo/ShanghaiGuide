@@ -35,6 +35,7 @@ public class DetailedActivity extends AppCompatActivity
         Log.v(TAG, "onCreate: Bundle: " + intentBundle.getDouble("latitude") + "/" +
                 intentBundle.getDouble("longitude") + " Color: " + intentBundle.getInt("color"));
 
+        //TODO Use the users current location to show directions to place
         Log.i(TAG, "Location: " +
                 MainActivity.mlocationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER).toString());
 
